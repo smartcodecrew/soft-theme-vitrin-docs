@@ -15,7 +15,11 @@
 
 ## شكل السكشن على المتجر
 
-![سلايدر الهيرو](./images/main-slider-hero.png)
+من [المتجر الحي](https://rc9x9o.zid.store/ar-eg/):
+
+![سلايدر الهيرو — شريحة نص وصورة](./images/main-slider-hero.png)
+
+![سلايدر الهيرو — شريحة صورة كاملة](./images/main-slider-hero-2.png)
 
 ---
 
