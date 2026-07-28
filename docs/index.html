@@ -281,6 +281,15 @@
       padding: 2rem 1.5rem;
       text-align: center;
     }
+    .video-box {
+      margin: 0 0 1.25rem;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #000;
+    }
+    .video-box video { width: 100%; display: block; max-height: 480px; }
+    .video-note { color: var(--muted); font-size: 0.85rem; margin: 0.55rem 0 0; }
     .cta-band h2 { margin: 0 0 0.5rem; color: var(--heading); }
     .cta-band p { margin: 0 auto 1.25rem; color: var(--muted); max-width: 34rem; }
 
@@ -413,6 +422,12 @@
               <span class="chip">أسهم + ترقيم</span>
               <span class="chip">Full width</span>
             </div>
+            <div class="video-box">
+              <video controls playsinline preload="metadata" poster="sections/images/main-slider-hero.png">
+                <source src="videos/yummy-hero-slider-ar-sa.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <p class="video-note">فيديو شرح باللهجة السعودية (~دقيقتين) — صوت: ar-SA-HamedNeural</p>
             <div class="shot-grid">
               <figure class="shot">
                 <img src="sections/images/main-slider-hero.png" alt="سلايدر الهيرو — شريحة نص وصورة" />

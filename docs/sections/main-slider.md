@@ -13,6 +13,12 @@
 
 ---
 
+## فيديو الشرح (لهجة سعودية)
+
+[مشاهدة الفيديو](../videos/yummy-hero-slider-ar-sa.mp4) · السكربت: [`hero-script-ar-sa.txt`](../videos/hero-script-ar-sa.txt)
+
+---
+
 ## شكل السكشن على المتجر
 
 من [المتجر الحي](https://rc9x9o.zid.store/ar-eg/):
