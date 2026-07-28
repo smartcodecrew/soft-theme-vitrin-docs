@@ -10,6 +10,8 @@
 
 | السكشن | الملف | الدليل |
 |--------|------|--------|
+| سلايدر الهيرو | `main-slider` | [شرح كامل + صور](./main-slider.md) · [في الصفحة الواحدة](../index.html#main-slider) |
+| شعارات الثقة | `trust-logos` | [شرح كامل + صور](./trust-logos.md) · [في الصفحة الواحدة](../index.html#trust-logos) |
 | قائمة التصنيفات | `collection-grid` | [شرح كامل + صور](./collection-grid.md) · [في الصفحة الواحدة](../index.html#collection-grid) |
 
 > بقية الأقسام ظاهرة في خريطة [الصفحة الواحدة](../index.html#sections) وستُضاف تدريجيًا بنفس الأسلوب.
