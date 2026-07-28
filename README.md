@@ -1,10 +1,10 @@
-﻿# Soft Theme Vitrin — دليل الأقسام للعملاء
+﻿# soft-theme-vitrin-docs
 
-شروحات عربية لكيفية إضافة وضبط أقسام الثيم، مع صور.
+دليل أقسام ثيم Maximize (زد) للتجار.
 
-## الأقسام
+## افتح الدليل
 
-- [فهرس الأقسام](docs/sections/README.md)
-- [قائمة التصنيفات (Collection list)](docs/sections/collection-grid.md)
+- **الصفحة الواحدة:** [docs/index.html](./docs/index.html)
+- بعد تفعيل GitHub Pages: الرابط يظهر في إعدادات المستودع
 
-المستودع الأصلي للثيم: https://github.com/zidsa/soft-theme-vitrin
+المحتوى يُحدَّث من مجلد `docs` في مشروع الثيم.
