@@ -1,10 +1,10 @@
 ﻿# soft-theme-vitrin-docs
 
-دليل أقسام ثيم Maximize (زد) للتجار.
+دليل أقسام ثيم **Yummy** (زد) للتجار.
 
 ## افتح الدليل
 
-- **الصفحة الواحدة:** [docs/index.html](./docs/index.html)
-- بعد تفعيل GitHub Pages: الرابط يظهر في إعدادات المستودع
+- **الصفحة الواحدة:** https://smartcodecrew.github.io/soft-theme-vitrin-docs/
+- المصدر: [docs/index.html](./docs/index.html)
 
 المحتوى يُحدَّث من مجلد `docs` في مشروع الثيم.
