@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دليل السكشن | Yummy</title>
+  <meta name="description" content="شرح إعدادات سكشن من ثيم Yummy لمتاجر زد." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%2393bb8e'/><path d='M18 34h28M32 20v28' stroke='%23002b26' stroke-width='6' stroke-linecap='round'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c1210;
+      --surface: #18241f;
+      --surface-2: #1f2e28;
+      --border: rgba(147, 187, 142, 0.2);
+      --text: #e8eee9;
+      --muted: #a8b6af;
+      --heading: #f5f8f6;
+      --primary: #93bb8e;
+      --primary-strong: #71be4f;
+      --primary-ink: #002b26;
+      --radius: 14px;
+      --max: 920px;
+      --font: "IBM Plex Sans Arabic", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(800px 360px at 90% -10%, rgba(147, 187, 142, 0.15), transparent 60%),
+        var(--bg);
+      font-family: var(--font);
+      line-height: 1.85;
+    }
+    a { color: var(--primary); }
+    img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(12, 18, 16, 0.88);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      width: min(100% - 2rem, var(--max)); margin-inline: auto;
+      min-height: 64px; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .brand { color: var(--heading); text-decoration: none; font-weight: 700; }
+    .back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 0.9rem; border: 1px solid var(--border);
+      border-radius: 999px; text-decoration: none; font-size: 0.88rem;
+    }
+    main { width: min(100% - 2rem, var(--max)); margin: 2rem auto 4rem; }
+    article {
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      background: linear-gradient(180deg, rgba(24, 36, 31, 0.96), rgba(18, 26, 23, 0.98));
+      border: 1px solid var(--border); border-radius: 20px;
+    }
+    h1, h2, h3, h4 { color: var(--heading); line-height: 1.4; }
+    h1 { margin: 0 0 1.25rem; font-size: clamp(1.8rem, 5vw, 2.7rem); }
+    h2 { margin-top: 2.4rem; padding-bottom: 0.45rem; border-bottom: 1px solid var(--border); }
+    h3 { margin-top: 1.8rem; color: var(--primary); }
+    p { color: var(--text); }
+    blockquote {
+      margin: 1.25rem 0; padding: 0.8rem 1rem;
+      border-right: 4px solid var(--primary);
+      background: rgba(147, 187, 142, 0.08); border-radius: 8px;
+    }
+    blockquote p { margin: 0; color: var(--muted); }
+    table {
+      display: block; width: 100%; overflow-x: auto;
+      border-collapse: collapse; margin: 1rem 0 1.4rem;
+    }
+    th, td {
+      min-width: 150px; padding: 0.7rem 0.8rem; text-align: right;
+      border: 1px solid var(--border); vertical-align: top;
+    }
+    th { color: var(--heading); background: var(--surface-2); }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.025); }
+    code {
+      direction: ltr; unicode-bidi: embed;
+      padding: 0.12rem 0.35rem; border-radius: 5px;
+      color: #cbe8c7; background: rgba(147, 187, 142, 0.1);
+      font-family: Consolas, monospace;
+    }
+    pre {
+      direction: ltr; text-align: left; overflow-x: auto;
+      padding: 1rem; border-radius: 10px; background: #080d0b;
+      border: 1px solid var(--border);
+    }
+    pre code { padding: 0; background: transparent; }
+    hr { margin: 2rem 0; border: 0; border-top: 1px solid var(--border); }
+    li { margin: 0.3rem 0; }
+    .state { padding: 3rem 1rem; text-align: center; color: var(--muted); }
+    .state strong { display: block; color: var(--heading); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    @media (max-width: 600px) {
+      main { width: min(100% - 1rem, var(--max)); margin-top: 0.75rem; }
+      article { border-radius: 14px; padding: 1rem; }
+      .nav-inner { width: min(100% - 1rem, var(--max)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">دليل أقسام الثيم</a>
+      <a class="back" href="index.html#sections">← كل الأقسام</a>
+    </div>
+  </header>
+  <main>
+    <article id="guide">
+      <div class="state"><strong>جارٍ تحميل الدليل…</strong>لحظات ويظهر المحتوى.</div>
+    </article>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+  <script>
+    (async function () {
+      const container = document.getElementById("guide");
+      const section = new URLSearchParams(location.search).get("section") || "";
+
+      if (!/^[a-z0-9-]+$/.test(section)) {
+        container.innerHTML = '<div class="state"><strong>رابط الدليل غير صحيح</strong><a href="index.html#sections">ارجع إلى قائمة الأقسام</a></div>';
+        return;
+      }
+
+      try {
+        const response = await fetch(`sections/${section}.md`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const bytes = await response.arrayBuffer();
+        const markdown = new TextDecoder("utf-8").decode(bytes);
+
+        if (!window.marked) {
+          throw new Error("Markdown renderer unavailable");
+        }
+
+        container.innerHTML = window.marked.parse(markdown, {
+          gfm: true,
+          breaks: false
+        });
+
+        const heading = container.querySelector("h1");
+        if (heading) document.title = `${heading.textContent} | Yummy`;
+
+        container.querySelectorAll('a[href$=".md"]').forEach((link) => {
+          const match = link.getAttribute("href").match(/([^/]+)\.md$/);
+          if (match) link.href = `guide.html?section=${encodeURIComponent(match[1])}`;
+        });
+      } catch (error) {
+        container.innerHTML = '<div class="state"><strong>تعذّر تحميل الدليل</strong>تأكد من الاتصال ثم أعد المحاولة، أو ارجع إلى <a href="index.html#sections">قائمة الأقسام</a>.</div>';
+        console.error("Guide load failed:", error);
+      }
+    })();
+  </script>
+</body>
+</html>

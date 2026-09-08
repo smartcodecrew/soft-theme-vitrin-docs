@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>دليل أقسام الثيم | Yummy</title>
   <meta name="description" content="صفحة واحدة توضّح كل أقسام ثيم زد Yummy: معاينة، شرح إعدادات المحرر، وسيناريوهات جاهزة للتجار." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%2393bb8e'/><path d='M18 34h28M32 20v28' stroke='%23002b26' stroke-width='6' stroke-linecap='round'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -181,6 +182,22 @@
     .toc-card p { margin: 0; color: var(--muted); font-size: 0.82rem; }
     .toc-card .en { color: rgba(154, 172, 163, 0.75); font-size: 0.75rem; margin-top: 0.35rem; }
 
+    .guide-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .guide-card {
+      scroll-margin-top: 90px;
+      display: flex; flex-direction: column; gap: 0.7rem;
+      min-height: 210px; padding: 1.2rem;
+      background: linear-gradient(180deg, var(--surface), var(--bg-2));
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    .guide-card h3 { margin: 0; color: var(--heading); font-size: 1.1rem; }
+    .guide-card .en { color: var(--primary); font-size: 0.78rem; }
+    .guide-card p { margin: 0; color: var(--muted); font-size: 0.9rem; flex: 1; }
+    .guide-card .btn { align-self: flex-start; padding: 0.55rem 1rem; font-size: 0.84rem; }
+
     /* Showcase */
     .showcase {
       background: linear-gradient(180deg, rgba(24, 36, 31, 0.9), rgba(18, 26, 23, 0.95));
@@ -330,6 +347,7 @@
         <a href="#main-slider">الهيرو</a>
         <a href="#trust-logos">شعارات الثقة</a>
         <a href="#collection-grid">التصنيفات</a>
+        <a href="#category-showcase">عرض التصنيفات</a>
         <a href="#howto">كيف تضيف؟</a>
         <a href="#faq">الأسئلة</a>
       </nav>
@@ -348,8 +366,8 @@
             بنفس روح صفحات الثيمات التسويقية، لكن عملي وموجّه للإعدادات.
           </p>
           <div class="stats" aria-label="أرقام سريعة">
-            <div class="stat"><strong>25</strong><span>قسم جاهز في الثيم</span></div>
-            <div class="stat"><strong>3</strong><span>شرح مكتمل الآن</span></div>
+            <div class="stat"><strong>27</strong><span>قسم جاهز في الثيم</span></div>
+            <div class="stat"><strong>27</strong><span>شرح مكتمل الآن</span></div>
             <div class="stat"><strong>RTL</strong><span>عربي أولًا</span></div>
             <div class="stat"><strong>0</strong><span>خبرة برمجية مطلوبة</span></div>
           </div>
@@ -412,7 +430,7 @@
               <div class="eyebrow">Hero slideshow · main-slider</div>
               <h3>شكل السكشن على المتجر</h3>
             </div>
-            <a class="btn btn-ghost" href="sections/main-slider.md">النسخة التفصيلية (Markdown)</a>
+            <a class="btn btn-ghost" href="guide.html?section=main-slider">فتح الدليل الكامل</a>
           </div>
           <div class="showcase-body">
             <div class="chips">
@@ -479,7 +497,7 @@
               <div class="eyebrow">Trust logos · trust-logos</div>
               <h3>شكل السكشن على المتجر</h3>
             </div>
-            <a class="btn btn-ghost" href="sections/trust-logos.md">النسخة التفصيلية (Markdown)</a>
+            <a class="btn btn-ghost" href="guide.html?section=trust-logos">فتح الدليل الكامل</a>
           </div>
           <div class="showcase-body">
             <div class="chips">
@@ -523,6 +541,69 @@
       </div>
     </section>
 
+    <section class="block" id="category-showcase">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>عرض التصنيفات</h2>
+          <p>بطاقات كبيرة تجمع صورة المجموعة وروابطها الفرعية ورابط «تسوّق الكل».</p>
+        </div>
+        <article class="showcase">
+          <div class="showcase-head">
+            <div>
+              <div class="eyebrow">Category showcase · category-showcase</div>
+              <h3>شكل السكشن على المتجر</h3>
+            </div>
+            <a class="btn btn-ghost" href="guide.html?section=category-showcase">فتح الدليل الكامل</a>
+          </div>
+          <div class="showcase-body">
+            <div class="chips">
+              <span class="chip">سلايدر / شبكة</span>
+              <span class="chip">حتى 12 بطاقة</span>
+              <span class="chip">روابط فرعية</span>
+              <span class="chip">تسوّق الكل</span>
+              <span class="chip">جمهور + دولة</span>
+            </div>
+            <div class="shot-grid">
+              <figure class="shot">
+                <img src="sections/images/category-showcase-slider.png" alt="عرض التصنيفات كسلايدر على المتجر" />
+                <figcaption>سلايدر بطاقات: صورة وعنوان وروابط فرعية مع رابط لتصفّح المجموعة كاملة</figcaption>
+              </figure>
+            </div>
+            <h4 style="color:var(--heading);margin:0 0 .75rem">الإعدادات باختصار</h4>
+            <details class="settings" open>
+              <summary>طريقة العرض والتخطيط</summary>
+              <div class="panel">
+                سلايدر أو شبكة، اتجاه RTL/LTR، مسافات مستقلة للشاشات، استدارة وخلفية البطاقات، نسبة الصورة، وعرض كامل للشاشة.
+              </div>
+            </details>
+            <details class="settings">
+              <summary>السلايدر أو الشبكة</summary>
+              <div class="panel">
+                <table>
+                  <tr><th>السلايدر</th><td>عدد البطاقات لكل شاشة، أسهم، شريط تقدم، Loop وتشغيل تلقائي</td></tr>
+                  <tr><th>الشبكة</th><td>عدد الأعمدة لكل مقاس من الجوال الصغير حتى الديسكتوب</td></tr>
+                </table>
+              </div>
+            </details>
+            <details class="settings">
+              <summary>محتوى البطاقة</summary>
+              <div class="panel">
+                صورة وملاءمتها، عنوان وألوان، حتى 8 روابط فرعية، رابط «تسوّق الكل»، مع تخصيص الظهور للزوار أو العملاء ودول محددة.
+              </div>
+            </details>
+            <details class="settings">
+              <summary>سيناريوهات جاهزة</summary>
+              <div class="panel">
+                <strong>A:</strong> سلايدر سوبرماركت بـ4–6 بطاقات ظاهرة.<br />
+                <strong>B:</strong> شبكة متجر صغير بعمودين على الجوال.<br />
+                <strong>C:</strong> بطاقات عروض حسب العميل أو الدولة.
+              </div>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="block" id="collection-grid">
       <div class="wrap">
         <div class="block-head">
@@ -536,7 +617,7 @@
               <div class="eyebrow">Collection list · collection-grid</div>
               <h3>شكل السكشن على المتجر</h3>
             </div>
-            <a class="btn btn-ghost" href="sections/collection-grid.md">النسخة التفصيلية (Markdown)</a>
+            <a class="btn btn-ghost" href="guide.html?section=collection-grid">فتح الدليل الكامل</a>
           </div>
           <div class="showcase-body">
             <div class="chips">
@@ -613,6 +694,18 @@
       </div>
     </section>
 
+    <section class="block" id="all-guides">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>أدلة باقي الأقسام</h2>
+          <p>كل سكشن له دليل مستقل يشرح الإضافة والإعدادات والشروط والسيناريوهات المقترحة.</p>
+        </div>
+        <div class="guide-grid" id="guide-grid">
+          <!-- filled by script from catalog -->
+        </div>
+      </div>
+    </section>
+
     <section class="block" id="howto">
       <div class="wrap">
         <div class="block-head">
@@ -637,7 +730,7 @@
         </div>
         <details>
           <summary>هل الشرح يغطي كل الأقسام؟</summary>
-          <div class="a">مكتمل الآن: <strong>سلايدر الهيرو</strong>، <strong>شعارات الثقة</strong>، و<strong>قائمة التصنيفات</strong>. باقي الأقسام ظاهرة في الخريطة وستُضاف على نفس الصفحة تدريجيًا.</div>
+          <div class="a">نعم. جميع الأقسام الفعلية وعددها <strong>27 قسمًا</strong> لها دليل مستقل، مع شروحات مرئية موسعة للأقسام الرئيسية.</div>
         </details>
         <details>
           <summary>هل أحتاج خبرة برمجية؟</summary>
@@ -670,7 +763,7 @@
     <div class="wrap">
       <span>© Yummy Theme docs — دليل أقسام للتجار</span>
       <span>
-        <a href="sections/README.md">فهرس Markdown</a>
+        <a href="#sections">فهرس الأقسام</a>
         ·
         <a href="https://github.com/zidsa/soft-theme-vitrin">مستودع الثيم</a>
       </span>
@@ -679,48 +772,56 @@
 
   <script>
     const SECTIONS = [
-      { id: "main-slider", ar: "سلايدر الهيرو", en: "Hero slideshow", ready: true, href: "#main-slider" },
-      { id: "trust-logos", ar: "شعارات الثقة", en: "Trust logos", ready: true, href: "#trust-logos" },
-      { id: "collection-grid", ar: "قائمة التصنيفات", en: "Collection list", ready: true, href: "#collection-grid" },
-      { id: "category-showcase", ar: "عرض التصنيفات", en: "Category showcase", ready: false },
-      { id: "category-section", ar: "التصنيفات", en: "Categories", ready: false },
-      { id: "category-products-section", ar: "منتجات التصنيف", en: "Category products", ready: false },
-      { id: "products-section", ar: "قائمة المنتجات", en: "Products", ready: false },
-      { id: "hot-deals", ar: "عروض ساخنة", en: "Hot Deals", ready: false },
-      { id: "fresh-picks", ar: "تابات شبكية", en: "Tabs Grid", ready: false },
-      { id: "market-specials", ar: "البنرات", en: "Banners", ready: false },
-      { id: "promo-columns", ar: "أعمدة العروض", en: "Promo Columns", ready: false },
-      { id: "promo-media-grid", ar: "شبكة الوسائط الترويجية", en: "Promo media grid", ready: false },
-      { id: "promotion-grid", ar: "شبكة العروض", en: "Promotion grid", ready: false },
-      { id: "delivery-banner", ar: "بانر التوصيل", en: "Delivery banner", ready: false },
-      { id: "scrolling-banner", ar: "شريط متحرك", en: "Scrolling banner", ready: false },
-      { id: "dietary-need", ar: "تسوق حسب الاحتياجات", en: "Shop By Requirements", ready: false },
-      { id: "healthy-living", ar: "لماذا نحن", en: "Why We're Great", ready: false },
-      { id: "icon-columns", ar: "أعمدة الخصائص", en: "Features columns", ready: false },
-      { id: "media-with-text", ar: "صورة مع نص", en: "Media with text", ready: false },
-      { id: "shop-look", ar: "تسوق المظهر", en: "Shop the Look", ready: false },
-      { id: "cards-slider-section", ar: "شرائح البطاقات", en: "Cards Slider", ready: false },
-      { id: "popular-companies", ar: "شركات شائعة", en: "Popular companies", ready: false },
-      { id: "testimonials", ar: "آراء العملاء", en: "Testimonials", ready: false },
-      { id: "recipes-events", ar: "سكشن فعاليات", en: "Events section", ready: false },
-      { id: "section-spacer", ar: "فاصل بين السكاشن", en: "Section spacer", ready: false }
+      { id: "main-slider", ar: "سلايدر الهيرو", en: "Hero slideshow", href: "#main-slider" },
+      { id: "trust-logos", ar: "شعارات الثقة", en: "Trust logos", href: "#trust-logos" },
+      { id: "collection-grid", ar: "قائمة التصنيفات", en: "Collection list", href: "#collection-grid" },
+      { id: "category-showcase", ar: "عرض التصنيفات", en: "Category showcase", href: "#category-showcase" },
+      { id: "category-section", ar: "التصنيفات", en: "Categories" },
+      { id: "category-products-section", ar: "منتجات التصنيف", en: "Category products" },
+      { id: "products-section", ar: "قائمة المنتجات", en: "Products" },
+      { id: "hot-deals", ar: "عروض ساخنة", en: "Hot Deals" },
+      { id: "fresh-picks", ar: "تابات شبكية", en: "Tabs Grid" },
+      { id: "market-specials", ar: "البنرات", en: "Banners" },
+      { id: "promo-columns", ar: "أعمدة العروض", en: "Promo Columns" },
+      { id: "promo-media-grid", ar: "شبكة الوسائط الترويجية", en: "Promo media grid" },
+      { id: "promotion-grid", ar: "شبكة العروض", en: "Promotion grid" },
+      { id: "delivery-banner", ar: "بانر التوصيل", en: "Delivery banner" },
+      { id: "scrolling-banner", ar: "شريط متحرك", en: "Scrolling banner" },
+      { id: "dietary-need", ar: "تسوق حسب الاحتياجات", en: "Shop By Requirements" },
+      { id: "healthy-living", ar: "لماذا نحن", en: "Why We're Great" },
+      { id: "icon-columns", ar: "أعمدة الخصائص", en: "Features columns" },
+      { id: "media-with-text", ar: "صورة مع نص", en: "Media with text" },
+      { id: "shop-look", ar: "تسوق المظهر", en: "Shop the Look" },
+      { id: "cards-slider-section", ar: "شرائح البطاقات", en: "Cards Slider" },
+      { id: "popular-companies", ar: "شركات شائعة", en: "Popular companies" },
+      { id: "testimonials", ar: "آراء العملاء", en: "Testimonials" },
+      { id: "recipes-events", ar: "سكشن فعاليات", en: "Events section" },
+      { id: "reels", ar: "ريلز / قصص فيديو", en: "Reels / Video Stories" },
+      { id: "store-branches", ar: "فروع المتجر", en: "Store branches" },
+      { id: "section-spacer", ar: "فاصل بين السكاشن", en: "Section spacer" }
     ];
 
     const toc = document.getElementById("toc");
     toc.innerHTML = SECTIONS.map((s) => {
-      const tag = s.ready
-        ? '<span class="tag tag-ready">جاهز</span>'
-        : '<span class="tag tag-soon">قريبًا</span>';
+      const tag = '<span class="tag tag-ready">جاهز</span>';
       const inner = `
         ${tag}
         <h3>${s.ar}</h3>
-        <p>${s.ready ? "شرح كامل مع صور وإعدادات" : "سيُضاف على هذه الصفحة"}</p>
+        <p>شرح الإضافة والإعدادات والسيناريوهات</p>
         <div class="en">${s.en}</div>`;
-      if (s.ready) {
-        return `<a class="toc-card ready" href="${s.href || "#" + s.id}">${inner}</a>`;
-      }
-      return `<div class="toc-card" id="toc-${s.id}">${inner}</div>`;
+      return `<a class="toc-card ready" href="${s.href || "#" + s.id}">${inner}</a>`;
     }).join("");
+
+    const expanded = new Set(["main-slider", "trust-logos", "collection-grid", "category-showcase"]);
+    const guideGrid = document.getElementById("guide-grid");
+    guideGrid.innerHTML = SECTIONS.filter((s) => !expanded.has(s.id)).map((s) => `
+      <article class="guide-card" id="${s.id}">
+        <div class="en">${s.en} · ${s.id}</div>
+        <h3>${s.ar}</h3>
+        <p>دليل عملي يشرح وظيفة السكشن، طريقة إضافته، مجموعات الإعدادات الفعلية في محرر زد، الشروط، والسيناريوهات المقترحة.</p>
+        <a class="btn btn-ghost" href="guide.html?section=${encodeURIComponent(s.id)}">فتح الدليل الكامل</a>
+      </article>
+    `).join("");
   </script>
 </body>
 </html>
