@@ -114,6 +114,7 @@
     .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
     .device {
+      position: relative;
       background: linear-gradient(180deg, var(--surface), var(--bg-2));
       border: 1px solid var(--border);
       border-radius: 22px;
@@ -130,9 +131,56 @@
     .device-bar span:nth-child(1) { background: #ff5f57; }
     .device-bar span:nth-child(2) { background: #febc2e; }
     .device-bar span:nth-child(3) { background: #28c840; }
+    .device-toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem; margin-bottom: 0.75rem;
+    }
+    .device-title { min-width: 0; }
+    .device-title strong {
+      display: block; color: var(--heading); font-size: 0.92rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .device-title small { color: var(--muted); font-size: 0.72rem; }
+    .device-modes {
+      display: inline-flex; gap: 0.2rem; flex-shrink: 0;
+      padding: 0.2rem; background: rgba(255,255,255,0.05); border-radius: 999px;
+    }
+    .device-mode, .device-arrow {
+      border: 0; color: var(--muted); background: transparent;
+      font: inherit; cursor: pointer;
+    }
+    .device-mode {
+      padding: 0.25rem 0.55rem; border-radius: 999px; font-size: 0.72rem;
+    }
+    .device-mode.is-active { color: var(--primary-ink); background: var(--primary); }
+    .device-viewport {
+      display: grid; place-items: center; height: 350px;
+      overflow: hidden; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06); background: #f4f6f4;
+    }
     .device img {
       border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);
-      aspect-ratio: 16/10; object-fit: cover; background: #101614;
+      width: 100%; height: 100%; object-fit: contain; background: #fff;
+      transition: opacity 0.18s ease;
+    }
+    .device-controls {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem; margin-top: 0.75rem;
+    }
+    .device-arrow {
+      display: grid; place-items: center; width: 34px; height: 34px;
+      border: 1px solid var(--border); border-radius: 50%;
+      color: var(--heading); font-size: 1.25rem;
+    }
+    .device-arrow:hover { color: var(--primary); border-color: var(--primary); }
+    .device-counter { color: var(--muted); font-size: 0.78rem; direction: ltr; }
+    .device-progress {
+      flex: 1; height: 3px; overflow: hidden; border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+    }
+    .device-progress span {
+      display: block; height: 100%; width: 0; background: var(--primary);
+      transition: width 0.25s ease;
     }
 
     /* Sections */
@@ -163,10 +211,10 @@
     }
     .toc-card {
       position: relative;
+      display: flex; flex-direction: column; overflow: hidden;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 1rem 1rem 0.95rem;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
     .toc-card:hover { border-color: rgba(147, 187, 142, 0.55); transform: translateY(-2px); }
@@ -178,7 +226,17 @@
     }
     .tag-ready { background: rgba(113, 190, 79, 0.18); color: var(--primary-strong); }
     .tag-soon { background: rgba(255,255,255,0.06); color: var(--muted); }
-    .toc-card h3 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--heading); padding-left: 3.5rem; }
+    .toc-media {
+      display: grid; place-items: center; height: 130px;
+      overflow: hidden; background: #f3f5f3; border-bottom: 1px solid var(--border);
+    }
+    .toc-media img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center; transition: transform 0.25s ease;
+    }
+    .toc-card:hover .toc-media img { transform: scale(1.035); }
+    .toc-content { display: flex; flex: 1; flex-direction: column; padding: 0.9rem 1rem 1rem; }
+    .toc-card h3 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--heading); }
     .toc-card p { margin: 0; color: var(--muted); font-size: 0.82rem; }
     .toc-card .en { color: rgba(154, 172, 163, 0.75); font-size: 0.75rem; margin-top: 0.35rem; }
 
@@ -310,6 +368,33 @@
     .cta-band h2 { margin: 0 0 0.5rem; color: var(--heading); }
     .cta-band p { margin: 0 auto 1.25rem; color: var(--muted); max-width: 34rem; }
 
+    .support-grid {
+      display: grid; gap: 1rem; grid-template-columns: 0.8fr 1.2fr;
+    }
+    .price-card, .support-card {
+      padding: 1.5rem;
+      border: 1px solid var(--border); border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(180deg, var(--surface), var(--bg-2));
+    }
+    .price-label { color: var(--primary); font-weight: 700; font-size: 0.88rem; }
+    .price {
+      margin: 0.35rem 0 0; color: var(--heading);
+      font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1;
+    }
+    .price span { color: var(--muted); font-size: 1rem; font-weight: 500; }
+    .price-note { margin: 0.8rem 0 0; color: var(--muted); font-size: 0.9rem; }
+    .support-card h3 { margin: 0 0 0.45rem; color: var(--heading); }
+    .support-message { margin: 0 0 1.1rem; color: var(--muted); }
+    .contact-list { display: grid; gap: 0.65rem; }
+    .contact-link {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 0.75rem 0.9rem; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); background: rgba(255,255,255,0.025);
+    }
+    .contact-link:hover { border-color: var(--primary); }
+    .contact-link span { color: var(--muted); font-size: 0.82rem; }
+    .contact-link strong { color: var(--heading); direction: ltr; font-size: 0.9rem; }
+
     footer.site {
       border-top: 1px solid var(--border);
       padding: 1.5rem 0 2.25rem;
@@ -326,11 +411,18 @@
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .feature-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr 1fr; }
+      .support-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
     @media (max-width: 560px) {
       .steps { grid-template-columns: 1fr; }
-      .toc-card h3 { padding-left: 0; margin-top: 1.4rem; }
+      .device-viewport { height: 310px; }
+      .toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .toc-media { height: 105px; }
+      .toc-content { padding: 0.75rem; }
+      .toc-card .tag { top: 0.5rem; left: 0.5rem; }
+      .toc-card p { display: none; }
+      .contact-link { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
     }
   </style>
 </head>
@@ -350,6 +442,7 @@
         <a href="#category-showcase">عرض التصنيفات</a>
         <a href="#howto">كيف تضيف؟</a>
         <a href="#faq">الأسئلة</a>
+        <a href="#support">الدعم والسعر</a>
       </nav>
       <a class="btn btn-primary" href="https://rc9x9o.zid.store/ar-eg/" target="_blank" rel="noopener">معاينة مباشرة</a>
     </div>
@@ -376,9 +469,27 @@
             <a class="btn btn-ghost" href="#main-slider">ابدأ بسلايدر الهيرو</a>
           </div>
         </div>
-        <div class="device" aria-hidden="true">
+        <div class="device" id="preview-device">
           <div class="device-bar"><span></span><span></span><span></span></div>
-          <img src="sections/images/main-slider-hero.png" alt="معاينة سلايدر الهيرو" />
+          <div class="device-toolbar">
+            <div class="device-title">
+              <strong id="device-title">سلايدر الهيرو</strong>
+              <small id="device-subtitle">Hero slideshow</small>
+            </div>
+            <div class="device-modes" aria-label="حجم المعاينة">
+              <button class="device-mode is-active" type="button" data-preview-mode="desktop">ويب</button>
+              <button class="device-mode" type="button" data-preview-mode="mobile">موبايل</button>
+            </div>
+          </div>
+          <div class="device-viewport">
+            <img id="device-image" src="sections/images/main-slider-horizontal-creative.png" alt="معاينة سلايدر الهيرو على الويب" />
+          </div>
+          <div class="device-controls">
+            <button class="device-arrow" type="button" data-preview-step="-1" aria-label="الصورة السابقة">‹</button>
+            <div class="device-progress" aria-hidden="true"><span id="device-progress"></span></div>
+            <span class="device-counter" id="device-counter">1 / 28</span>
+            <button class="device-arrow" type="button" data-preview-step="1" aria-label="الصورة التالية">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -448,6 +559,10 @@
             <p class="video-note">فيديو شرح باللهجة السعودية (~دقيقتين) — صوت: ar-SA-HamedNeural</p>
             <div class="shot-grid">
               <figure class="shot">
+                <img src="sections/images/main-slider-horizontal-creative-mobile.png" alt="سلايدر الهيرو على الموبايل" />
+                <figcaption>معاينة الموبايل بعرض 390px</figcaption>
+              </figure>
+              <figure class="shot">
                 <img src="sections/images/main-slider-hero.png" alt="سلايدر الهيرو — شريحة نص وصورة" />
                 <figcaption>شريحة بنص وزر CTA بجانب صورة المنتجات (من المتجر الحي)</figcaption>
               </figure>
@@ -511,6 +626,10 @@
                 <img src="sections/images/trust-logos-marquee.png" alt="شعارات الثقة من المتجر الحي" />
                 <figcaption>نمط سلايدر / تمرير أفقي — شهادات حقيقية كما تظهر على المتجر</figcaption>
               </figure>
+              <figure class="shot">
+                <img src="sections/images/trust-logos-grid-mobile.png" alt="شبكة شعارات الثقة على الموبايل" />
+                <figcaption>معاينة شبكة الشعارات على الموبايل بعرض 390px</figcaption>
+              </figure>
             </div>
             <h4 style="color:var(--heading);margin:0 0 .75rem">الإعدادات باختصار</h4>
             <details class="settings" open>
@@ -567,6 +686,10 @@
               <figure class="shot">
                 <img src="sections/images/category-showcase-slider.png" alt="عرض التصنيفات كسلايدر على المتجر" />
                 <figcaption>سلايدر بطاقات: صورة وعنوان وروابط فرعية مع رابط لتصفّح المجموعة كاملة</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="sections/images/category-showcase-slider-mobile.png" alt="عرض التصنيفات على الموبايل" />
+                <figcaption>معاينة الموبايل بعرض 390px</figcaption>
               </figure>
             </div>
             <h4 style="color:var(--heading);margin:0 0 .75rem">الإعدادات باختصار</h4>
@@ -629,6 +752,10 @@
             </div>
 
             <div class="shot-grid">
+              <figure class="shot">
+                <img src="sections/images/collection-grid-cover-banners-mobile.png" alt="قائمة التصنيفات على الموبايل" />
+                <figcaption>معاينة بنرات التصنيفات على الموبايل بعرض 390px</figcaption>
+              </figure>
               <figure class="shot">
                 <img src="sections/images/collection-grid-styles.png" alt="شكلان شائعان لقائمة التصنيفات" />
                 <figcaption>بطاقات صور بعناوين تحت الصورة، وبنرات غلاف بعناوين فوق الصورة</figcaption>
@@ -747,6 +874,37 @@
       </div>
     </section>
 
+    <section class="block" id="support">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>سعر الثيم والدعم الفني</h2>
+          <p>بيانات واضحة للتواصل قبل وبعد تركيب الثيم.</p>
+        </div>
+        <div class="support-grid">
+          <article class="price-card">
+            <div class="price-label">سعر ثيم Yummy</div>
+            <div class="price">1,200 <span>ريال سعودي</span></div>
+            <p class="price-note">سعر الثيم كاملًا بتصميماته وأقسامه الموثقة في هذا الدليل.</p>
+          </article>
+          <article class="support-card">
+            <h3>نحن معك بعد التركيب</h3>
+            <p class="support-message">إذا واجهت مشكلة في إعدادات الثيم، راسلنا وسنساعدك مجاناً.</p>
+            <div class="contact-list">
+              <a class="contact-link" href="tel:+201145828786">
+                <span>رقم الدعم الفني</span><strong>+20 114 582 8786</strong>
+              </a>
+              <a class="contact-link" href="https://wa.me/201145828786" target="_blank" rel="noopener">
+                <span>الدعم عبر واتساب</span><strong>+20 114 582 8786</strong>
+              </a>
+              <a class="contact-link" href="mailto:smartcodecrew@gmail.com">
+                <span>البريد الفني</span><strong>smartcodecrew@gmail.com</strong>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <div class="wrap">
       <div class="cta-band">
         <h2>جاهز تشوف الأقسام على متجر حي؟</h2>
@@ -764,52 +922,144 @@
       <span>
         <a href="#sections">فهرس الأقسام</a>
         ·
-        <a href="https://github.com/zidsa/soft-theme-vitrin">مستودع الثيم</a>
+        <a href="#support">الدعم الفني</a>
       </span>
     </div>
   </footer>
 
   <script>
     const SECTIONS = [
-      { id: "main-slider", ar: "سلايدر الهيرو", en: "Hero slideshow", href: "#main-slider" },
-      { id: "trust-logos", ar: "شعارات الثقة", en: "Trust logos", href: "#trust-logos" },
-      { id: "collection-grid", ar: "قائمة التصنيفات", en: "Collection list", href: "#collection-grid" },
-      { id: "category-showcase", ar: "عرض التصنيفات", en: "Category showcase", href: "#category-showcase" },
-      { id: "category-section", ar: "التصنيفات", en: "Categories" },
-      { id: "category-products-section", ar: "منتجات التصنيف", en: "Category products" },
-      { id: "products-section", ar: "قائمة المنتجات", en: "Products" },
-      { id: "hot-deals", ar: "عروض ساخنة", en: "Hot Deals" },
-      { id: "fresh-picks", ar: "تابات شبكية", en: "Tabs Grid" },
-      { id: "market-specials", ar: "البنرات", en: "Banners" },
-      { id: "promo-columns", ar: "أعمدة العروض", en: "Promo Columns" },
-      { id: "promo-media-grid", ar: "شبكة الوسائط الترويجية", en: "Promo media grid" },
-      { id: "promotion-grid", ar: "شبكة العروض", en: "Promotion grid" },
-      { id: "delivery-banner", ar: "بانر التوصيل", en: "Delivery banner" },
-      { id: "scrolling-banner", ar: "شريط متحرك", en: "Scrolling banner" },
-      { id: "dietary-need", ar: "تسوق حسب الاحتياجات", en: "Shop By Requirements" },
-      { id: "healthy-living", ar: "لماذا نحن", en: "Why We're Great" },
-      { id: "icon-columns", ar: "أعمدة الخصائص", en: "Features columns" },
-      { id: "media-with-text", ar: "صورة مع نص", en: "Media with text" },
-      { id: "shop-look", ar: "تسوق المظهر", en: "Shop the Look" },
-      { id: "cards-slider-section", ar: "شرائح البطاقات", en: "Cards Slider" },
-      { id: "popular-companies", ar: "شركات شائعة", en: "Popular companies" },
-      { id: "testimonials", ar: "آراء العملاء", en: "Testimonials" },
-      { id: "recipes-events", ar: "سكشن فعاليات", en: "Events section" },
-      { id: "reels", ar: "ريلز / قصص فيديو", en: "Reels / Video Stories" },
-      { id: "store-branches", ar: "فروع المتجر", en: "Store branches" },
-      { id: "section-spacer", ar: "فاصل بين السكاشن", en: "Section spacer" }
+      { id: "main-slider", ar: "سلايدر الهيرو", en: "Hero slideshow", href: "#main-slider", image: "main-slider-horizontal-creative" },
+      { id: "trust-logos", ar: "شعارات الثقة", en: "Trust logos", href: "#trust-logos", image: "trust-logos-grid" },
+      { id: "collection-grid", ar: "قائمة التصنيفات", en: "Collection list", href: "#collection-grid", image: "collection-grid-cover-banners" },
+      { id: "category-showcase", ar: "عرض التصنيفات", en: "Category showcase", href: "#category-showcase", image: "category-showcase-slider" },
+      { id: "category-section", ar: "التصنيفات", en: "Categories", image: "collection-grid-marquee" },
+      { id: "category-products-section", ar: "منتجات التصنيف", en: "Category products", image: "products-section-slider" },
+      { id: "products-section", ar: "قائمة المنتجات", en: "Products", image: "products-section-slider" },
+      { id: "hot-deals", ar: "عروض ساخنة", en: "Hot Deals", image: "hot-deals-classic-slider" },
+      { id: "fresh-picks", ar: "تابات شبكية", en: "Tabs Grid", image: "fresh-picks-tabs-slider" },
+      { id: "market-specials", ar: "البنرات", en: "Banners", image: "market-specials-slider-wide" },
+      { id: "promo-columns", ar: "أعمدة العروض", en: "Promo Columns", image: "promo-columns-slider" },
+      { id: "promo-media-grid", ar: "شبكة الوسائط الترويجية", en: "Promo media grid", image: "promo-media-grid" },
+      { id: "promotion-grid", ar: "شبكة العروض", en: "Promotion grid", image: "market-specials-grid-large" },
+      { id: "delivery-banner", ar: "بانر التوصيل", en: "Delivery banner", image: "delivery-banner-media-end" },
+      { id: "scrolling-banner", ar: "شريط متحرك", en: "Scrolling banner", image: "market-specials-slider-strip" },
+      { id: "dietary-need", ar: "تسوق حسب الاحتياجات", en: "Shop By Requirements", image: "dietary-need-icons-slider" },
+      { id: "healthy-living", ar: "لماذا نحن", en: "Why We're Great", image: "healthy-living-media-start" },
+      { id: "icon-columns", ar: "أعمدة الخصائص", en: "Features columns", image: "icon-columns-stack" },
+      { id: "media-with-text", ar: "صورة مع نص", en: "Media with text", image: "healthy-living-media-start" },
+      { id: "shop-look", ar: "تسوق المظهر", en: "Shop the Look", image: "shop-look-hotspots" },
+      { id: "cards-slider-section", ar: "شرائح البطاقات", en: "Cards Slider", image: "recipes-events-slider" },
+      { id: "popular-companies", ar: "شركات شائعة", en: "Popular companies", image: "popular-companies-slider" },
+      { id: "testimonials", ar: "آراء العملاء", en: "Testimonials", image: "popular-companies-slider" },
+      { id: "recipes-events", ar: "سكشن فعاليات", en: "Events section", image: "recipes-events-slider" },
+      { id: "reels", ar: "ريلز / قصص فيديو", en: "Reels / Video Stories", image: "reels-video-stories-slider" },
+      { id: "store-branches", ar: "فروع المتجر", en: "Store branches", image: "store-branches-map" },
+      { id: "section-spacer", ar: "فاصل بين السكاشن", en: "Section spacer", image: "trust-logos-marquee" }
+    ];
+
+    const PREVIEWS = [
+      { ar: "شريط البنرات", en: "Banners strip", image: "market-specials-slider-strip" },
+      { ar: "سلايدر الهيرو", en: "Hero slideshow", image: "main-slider-horizontal-creative" },
+      { ar: "شريط التصنيفات", en: "Categories marquee", image: "collection-grid-marquee" },
+      { ar: "بطاقات البنرات", en: "Banner cards", image: "market-specials-slider-cards" },
+      { ar: "تصنيفات بصفّين", en: "Dual row · Snap", image: "collection-grid-dual-opposite-snap" },
+      { ar: "تصنيفات بصفّين", en: "Dual row · Slide", image: "collection-grid-dual-opposite-slide" },
+      { ar: "العروض الساخنة", en: "Hot Deals", image: "hot-deals-classic-slider" },
+      { ar: "بنر عريض", en: "Wide banner", image: "market-specials-slider-wide" },
+      { ar: "شعارات الثقة", en: "Trust logos marquee", image: "trust-logos-marquee" },
+      { ar: "أعمدة العروض", en: "Promo columns", image: "promo-columns-slider" },
+      { ar: "التسوق حسب الاحتياج", en: "Dietary needs", image: "dietary-need-icons-slider" },
+      { ar: "تابات شبكية", en: "Fresh picks", image: "fresh-picks-tabs-slider" },
+      { ar: "أعمدة الخصائص", en: "Icon columns", image: "icon-columns-stack" },
+      { ar: "شبكة الوسائط", en: "Promo media grid", image: "promo-media-grid" },
+      { ar: "عرض التصنيفات", en: "Category showcase", image: "category-showcase-slider" },
+      { ar: "لماذا نحن", en: "Healthy living", image: "healthy-living-media-start" },
+      { ar: "بنر صغير", en: "Small banner", image: "market-specials-slider-small" },
+      { ar: "تسوق المظهر", en: "Shop the Look", image: "shop-look-hotspots" },
+      { ar: "بانر التوصيل", en: "Delivery banner", image: "delivery-banner-media-end" },
+      { ar: "الشركات الشهيرة", en: "Popular companies", image: "popular-companies-slider" },
+      { ar: "شبكة بنرات مدمجة", en: "Compact banners grid", image: "market-specials-grid-compact" },
+      { ar: "قائمة المنتجات", en: "Products slider", image: "products-section-slider" },
+      { ar: "ريلز وقصص فيديو", en: "Reels", image: "reels-video-stories-slider" },
+      { ar: "فروع المتجر", en: "Store branches", image: "store-branches-map" },
+      { ar: "شبكة بنرات كبيرة", en: "Large banners grid", image: "market-specials-grid-large" },
+      { ar: "الوصفات والفعاليات", en: "Recipes & Events", image: "recipes-events-slider" },
+      { ar: "شبكة شعارات الثقة", en: "Trust logos grid", image: "trust-logos-grid" },
+      { ar: "بنرات التصنيفات", en: "Category banners", image: "collection-grid-cover-banners" }
     ];
 
     const toc = document.getElementById("toc");
     toc.innerHTML = SECTIONS.map((s) => {
       const tag = '<span class="tag tag-ready">جاهز</span>';
       const inner = `
-        ${tag}
-        <h3>${s.ar}</h3>
-        <p>شرح الإضافة والإعدادات والسيناريوهات</p>
-        <div class="en">${s.en}</div>`;
+        <div class="toc-media">
+          <img src="sections/images/${s.image}.png" alt="معاينة ${s.ar}" loading="lazy" />
+          ${tag}
+        </div>
+        <div class="toc-content">
+          <h3>${s.ar}</h3>
+          <p>شرح الإضافة والإعدادات والسيناريوهات</p>
+          <div class="en">${s.en}</div>
+        </div>`;
       return `<a class="toc-card ready" href="${s.href || "#" + s.id}">${inner}</a>`;
     }).join("");
+
+    const previewDevice = document.getElementById("preview-device");
+    const previewImage = document.getElementById("device-image");
+    const previewTitle = document.getElementById("device-title");
+    const previewSubtitle = document.getElementById("device-subtitle");
+    const previewCounter = document.getElementById("device-counter");
+    const previewProgress = document.getElementById("device-progress");
+    let previewIndex = 0;
+    let previewMode = "desktop";
+    let previewTimer;
+
+    function renderPreview() {
+      const item = PREVIEWS[previewIndex];
+      const suffix = previewMode === "mobile" ? "-mobile" : "";
+      previewImage.style.opacity = "0";
+      previewImage.src = `sections/images/${item.image}${suffix}.png`;
+      previewImage.alt = `معاينة ${item.ar} على ${previewMode === "mobile" ? "الموبايل" : "الويب"}`;
+      previewTitle.textContent = item.ar;
+      previewSubtitle.textContent = `${item.en} · ${previewMode === "mobile" ? "Mobile" : "Desktop"}`;
+      previewCounter.textContent = `${previewIndex + 1} / ${PREVIEWS.length}`;
+      previewProgress.style.width = `${((previewIndex + 1) / PREVIEWS.length) * 100}%`;
+      requestAnimationFrame(() => { previewImage.style.opacity = "1"; });
+    }
+
+    function movePreview(step) {
+      previewIndex = (previewIndex + step + PREVIEWS.length) % PREVIEWS.length;
+      renderPreview();
+    }
+
+    function startPreviewTimer() {
+      clearInterval(previewTimer);
+      previewTimer = setInterval(() => movePreview(1), 4500);
+    }
+
+    document.querySelectorAll("[data-preview-step]").forEach((button) => {
+      button.addEventListener("click", () => {
+        movePreview(Number(button.dataset.previewStep));
+        startPreviewTimer();
+      });
+    });
+    document.querySelectorAll("[data-preview-mode]").forEach((button) => {
+      button.addEventListener("click", () => {
+        previewMode = button.dataset.previewMode;
+        document.querySelectorAll("[data-preview-mode]").forEach((mode) => {
+          mode.classList.toggle("is-active", mode === button);
+        });
+        renderPreview();
+        startPreviewTimer();
+      });
+    });
+    previewDevice.addEventListener("mouseenter", () => clearInterval(previewTimer));
+    previewDevice.addEventListener("mouseleave", startPreviewTimer);
+    previewDevice.addEventListener("focusin", () => clearInterval(previewTimer));
+    previewDevice.addEventListener("focusout", startPreviewTimer);
+    renderPreview();
+    startPreviewTimer();
 
     const expanded = new Set(["main-slider", "trust-logos", "collection-grid", "category-showcase"]);
     const guideGrid = document.getElementById("guide-grid");

@@ -39,6 +39,41 @@
     a { color: var(--primary); }
     img, video { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 12px; }
     video { margin: 1rem 0; background: #050806; border: 1px solid var(--border); }
+    .preview-pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(190px, 0.34fr);
+      gap: 1rem;
+      align-items: start;
+      margin: 1.25rem 0;
+    }
+    .preview-card {
+      margin: 0;
+      padding: 0.7rem;
+      overflow: hidden;
+      background: #f7f8f7;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .preview-card img {
+      border-radius: 8px;
+      object-fit: contain;
+      background: #fff;
+    }
+    .preview-card--mobile img { max-height: 620px; }
+    .preview-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+      color: #32463d;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .preview-label small { color: #6e8178; font-weight: 500; direction: ltr; }
+    .preview-note {
+      margin: -0.45rem 0 1rem; color: var(--muted);
+      font-size: 0.82rem;
+    }
     .nav {
       position: sticky; top: 0; z-index: 20;
       border-bottom: 1px solid var(--border);
@@ -103,6 +138,8 @@
       main { width: min(100% - 1rem, var(--max)); margin-top: 0.75rem; }
       article { border-radius: 14px; padding: 1rem; }
       .nav-inner { width: min(100% - 1rem, var(--max)); }
+      .preview-pair { grid-template-columns: 1fr; }
+      .preview-card--mobile { width: min(100%, 390px); margin-inline: auto; }
     }
   </style>
 </head>
@@ -157,6 +194,85 @@
           image.loading = "lazy";
           image.decoding = "async";
         });
+
+        const responsivePreviews = new Set([
+          "market-specials-slider-strip", "main-slider-horizontal-creative",
+          "collection-grid-marquee", "market-specials-slider-cards",
+          "collection-grid-dual-opposite-snap", "collection-grid-dual-opposite-slide",
+          "hot-deals-classic-slider", "market-specials-slider-wide",
+          "trust-logos-marquee", "promo-columns-slider",
+          "dietary-need-icons-slider", "fresh-picks-tabs-slider",
+          "icon-columns-stack", "promo-media-grid", "category-showcase-slider",
+          "healthy-living-media-start", "market-specials-slider-small",
+          "shop-look-hotspots", "delivery-banner-media-end",
+          "popular-companies-slider", "market-specials-grid-compact",
+          "products-section-slider", "reels-video-stories-slider",
+          "store-branches-map", "market-specials-grid-large",
+          "recipes-events-slider", "trust-logos-grid",
+          "collection-grid-cover-banners"
+        ]);
+
+        container.querySelectorAll("img").forEach((image) => {
+          const match = image.src.match(/\/([^/]+)\.png(?:\?.*)?$/);
+          if (!match || !responsivePreviews.has(match[1])) return;
+
+          const pair = document.createElement("div");
+          pair.className = "preview-pair";
+
+          const desktop = document.createElement("figure");
+          desktop.className = "preview-card";
+          desktop.innerHTML = '<figcaption class="preview-label"><span>معاينة الويب</span><small>Desktop</small></figcaption>';
+          desktop.append(image.cloneNode());
+
+          const mobile = document.createElement("figure");
+          mobile.className = "preview-card preview-card--mobile";
+          mobile.innerHTML = '<figcaption class="preview-label"><span>معاينة الموبايل</span><small>Mobile · 390px</small></figcaption>';
+          const mobileImage = image.cloneNode();
+          mobileImage.src = image.src.replace(/\.png(?:\?.*)?$/, "-mobile.png");
+          mobileImage.alt = `${image.alt} — موبايل`;
+          mobile.append(mobileImage);
+
+          pair.append(desktop, mobile);
+          const imageParagraph = image.parentElement;
+          if (imageParagraph?.tagName === "P" && imageParagraph.children.length === 1) {
+            imageParagraph.replaceWith(pair);
+          } else {
+            image.replaceWith(pair);
+          }
+        });
+
+        const illustrativePreviews = {
+          "category-section": "collection-grid-marquee",
+          "category-products-section": "products-section-slider",
+          "promotion-grid": "market-specials-grid-large",
+          "scrolling-banner": "market-specials-slider-strip",
+          "media-with-text": "healthy-living-media-start",
+          "cards-slider-section": "recipes-events-slider",
+          "testimonials": "popular-companies-slider",
+          "section-spacer": "icon-columns-stack"
+        };
+
+        if (!container.querySelector(".preview-pair") && illustrativePreviews[section]) {
+          const previewName = illustrativePreviews[section];
+          const pair = document.createElement("div");
+          pair.className = "preview-pair";
+          pair.innerHTML = `
+            <figure class="preview-card">
+              <figcaption class="preview-label"><span>معاينة توضيحية للويب</span><small>Desktop</small></figcaption>
+              <img src="sections/images/${previewName}.png" alt="معاينة توضيحية للتخطيط على الويب" loading="lazy" />
+            </figure>
+            <figure class="preview-card preview-card--mobile">
+              <figcaption class="preview-label"><span>معاينة توضيحية للموبايل</span><small>Mobile · 390px</small></figcaption>
+              <img src="sections/images/${previewName}-mobile.png" alt="معاينة توضيحية للتخطيط على الموبايل" loading="lazy" />
+            </figure>`;
+          const note = document.createElement("p");
+          note.className = "preview-note";
+          note.textContent = "صورة توضيحية من أقرب تخطيط حي في الثيم؛ قد يختلف المحتوى النهائي حسب إعدادات هذا السكشن.";
+          const visualHeading = [...container.querySelectorAll("h2")].find((heading) =>
+            heading.textContent.includes("شكل السكشن")
+          );
+          if (visualHeading) visualHeading.after(note, pair);
+        }
 
         container.querySelectorAll("video, video source").forEach((media) => {
           const src = media.getAttribute("src") || "";
