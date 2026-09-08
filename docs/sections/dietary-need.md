@@ -11,6 +11,15 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+![تسوق حسب الاحتياجات (Dietary need) - dietary-need-icons-slider](./images/dietary-need-icons-slider.png)
+
+*تسوق حسب الاحتياجات (Dietary need) - dietary-need-icons-slider*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** في زد.

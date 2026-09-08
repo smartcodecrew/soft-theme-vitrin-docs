@@ -11,6 +11,20 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/reels-video-stories.mp4"></video>
+
+*ريلز / قصص فيديو (Reels / Video Stories) - reels-video-stories*
+
+![ريلز / قصص فيديو (Reels / Video Stories) - reels-video-stories-slider](./images/reels-video-stories-slider.png)
+
+*ريلز / قصص فيديو (Reels / Video Stories) - reels-video-stories-slider*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** واضغط **إضافة قسم** → **ريلز / قصص فيديو**.

@@ -11,6 +11,15 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+![لماذا نحن (Healthy living) - healthy-living-media-start](./images/healthy-living-media-start.png)
+
+*لماذا نحن (Healthy living) - healthy-living-media-start*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** واختر الصفحة المطلوبة.

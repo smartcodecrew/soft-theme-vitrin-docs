@@ -21,6 +21,17 @@
 
 > يمكن أيضًا اختيار **شبكة (Grid)** من المحرر لنفس الشعارات بدون حركة.
 
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/trust-logos-marquee.mp4"></video>
+
+*شعارات الثقة (Trust logos) - trust-logos-marquee*
+
+![شعارات الثقة (Trust logos) - trust-logos-grid](./images/trust-logos-grid.png)
+
+*شعارات الثقة (Trust logos) - trust-logos-grid*
+
 ---
 
 ## 1) كيفية الإضافة

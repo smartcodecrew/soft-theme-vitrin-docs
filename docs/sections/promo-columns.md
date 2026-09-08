@@ -17,6 +17,12 @@
 
 كل عمود يحتوي على بطاقة عرض كبيرة في الأعلى، ثم حتى 3 بطاقات تصنيفات صغيرة. يمكن عرض الأعمدة كلها في شبكة أو تمريرها كسلايدر.
 
+
+<!-- live-preview-media -->
+![أعمدة العروض (Promo columns) - promo-columns-slider](./images/promo-columns-slider.png)
+
+*أعمدة العروض (Promo columns) - promo-columns-slider*
+
 ---
 
 ## 1) كيفية الإضافة

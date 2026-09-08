@@ -11,6 +11,15 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+![تسوق المظهر (Shop the Look) - shop-look-hotspots](./images/shop-look-hotspots.png)
+
+*تسوق المظهر (Shop the Look) - shop-look-hotspots*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** واختر الصفحة.

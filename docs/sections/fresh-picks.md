@@ -11,6 +11,20 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/fresh-picks-tabs.mp4"></video>
+
+*تابات شبكية (Tabs Grid) - fresh-picks-tabs*
+
+![تابات شبكية (Tabs Grid) - fresh-picks-tabs-slider](./images/fresh-picks-tabs-slider.png)
+
+*تابات شبكية (Tabs Grid) - fresh-picks-tabs-slider*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** واضغط **إضافة قسم** → **تابات شبكية**.

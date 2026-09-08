@@ -17,6 +17,12 @@
 
 يتكون من عنوان وعنوان فرعي اختياريين، ثم بطاقات شعارات. يمكن أن تكون البطاقة كاملة — شعار ووصف وزر — أو صورة فقط مع رابط. يدعم السكشن الشبكة والسلايدر والحركات البصرية الخفيفة.
 
+
+<!-- live-preview-media -->
+![شركات شائعة (Popular companies) - popular-companies-slider](./images/popular-companies-slider.png)
+
+*شركات شائعة (Popular companies) - popular-companies-slider*
+
 ---
 
 ## 1) كيفية الإضافة

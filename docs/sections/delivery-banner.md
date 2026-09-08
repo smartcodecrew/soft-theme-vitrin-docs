@@ -17,6 +17,12 @@
 
 يتكون من مساحة محتوى فيها عنوان ووصف وحتى 6 ميزات، وبجانبها صورة اختيارية. جزء من العنوان يمكن تمييزه بلون وحركة، ويمكن عكس موضع الصورة واتجاه السكشن.
 
+
+<!-- live-preview-media -->
+![بانر التوصيل (Delivery banner) - delivery-banner-media-end](./images/delivery-banner-media-end.png)
+
+*بانر التوصيل (Delivery banner) - delivery-banner-media-end*
+
 ---
 
 ## 1) كيفية الإضافة

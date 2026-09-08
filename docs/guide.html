@@ -37,7 +37,8 @@
       line-height: 1.85;
     }
     a { color: var(--primary); }
-    img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
+    img, video { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 12px; }
+    video { margin: 1rem 0; background: #050806; border: 1px solid var(--border); }
     .nav {
       position: sticky; top: 0; z-index: 20;
       border-bottom: 1px solid var(--border);
@@ -147,6 +148,22 @@
 
         const heading = container.querySelector("h1");
         if (heading) document.title = `${heading.textContent} | Yummy`;
+
+        container.querySelectorAll("img").forEach((image) => {
+          const src = image.getAttribute("src") || "";
+          if (src && !/^(?:[a-z]+:|\/|#)/i.test(src)) {
+            image.src = `sections/${src.replace(/^\.\//, "")}`;
+          }
+          image.loading = "lazy";
+          image.decoding = "async";
+        });
+
+        container.querySelectorAll("video, video source").forEach((media) => {
+          const src = media.getAttribute("src") || "";
+          if (src && !/^(?:[a-z]+:|\/|#)/i.test(src)) {
+            media.src = `sections/${src.replace(/^\.\//, "")}`;
+          }
+        });
 
         container.querySelectorAll('a[href$=".md"]').forEach((link) => {
           const match = link.getAttribute("href").match(/([^/]+)\.md$/);

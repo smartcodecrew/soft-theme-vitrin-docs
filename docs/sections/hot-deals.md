@@ -11,6 +11,20 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/hot-deals-tabs.mp4"></video>
+
+*عروض ساخنة (Hot Deals) - hot-deals-tabs*
+
+![عروض ساخنة (Hot Deals) - hot-deals-classic-slider](./images/hot-deals-classic-slider.png)
+
+*عروض ساخنة (Hot Deals) - hot-deals-classic-slider*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** واضغط **إضافة قسم** → **عروض ساخنة (Hot Deals)**.

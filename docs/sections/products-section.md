@@ -11,6 +11,20 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/products-slider.mp4"></video>
+
+*قائمة المنتجات (Products) - products-slider*
+
+![قائمة المنتجات (Products) - products-section-slider](./images/products-section-slider.png)
+
+*قائمة المنتجات (Products) - products-section-slider*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** في زد واختر الصفحة المطلوبة.

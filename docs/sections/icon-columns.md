@@ -11,6 +11,15 @@
 
 ---
 
+## شكل السكشن على المتجر
+
+<!-- live-preview-media -->
+![أعمدة الخصائص (Icon columns) - icon-columns-stack](./images/icon-columns-stack.png)
+
+*أعمدة الخصائص (Icon columns) - icon-columns-stack*
+
+---
+
 ## 1) كيفية الإضافة
 
 1. افتح **محرر الثيم** في زد واختر الصفحة.

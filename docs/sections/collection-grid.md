@@ -27,6 +27,33 @@
 
 ![أيقونات دائرية](./images/collection-grid-icons-circle-crop.png)
 
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/collection-grid-marquee.mp4"></video>
+
+*قائمة التصنيفات (Collection list) - collection-grid-marquee*
+
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/collection-grid-dual-opposite.mp4"></video>
+
+*قائمة التصنيفات (Collection list) - collection-grid-dual-opposite*
+
+![قائمة التصنيفات (Collection list) - collection-grid-marquee](./images/collection-grid-marquee.png)
+
+*قائمة التصنيفات (Collection list) - collection-grid-marquee*
+
+![قائمة التصنيفات (Collection list) - collection-grid-dual-opposite-snap](./images/collection-grid-dual-opposite-snap.png)
+
+*قائمة التصنيفات (Collection list) - collection-grid-dual-opposite-snap*
+
+![قائمة التصنيفات (Collection list) - collection-grid-dual-opposite-slide](./images/collection-grid-dual-opposite-slide.png)
+
+*قائمة التصنيفات (Collection list) - collection-grid-dual-opposite-slide*
+
+![قائمة التصنيفات (Collection list) - collection-grid-cover-banners](./images/collection-grid-cover-banners.png)
+
+*قائمة التصنيفات (Collection list) - collection-grid-cover-banners*
+
 ---
 
 ## 1) كيفية الإضافة

@@ -17,6 +17,37 @@
 
 يمكن أن يظهر كبنر واحد أو عدة بنرات قابلة للسحب، أو كشبكة تعرضها معًا. كل بنر يعمل بإحدى طريقتين: **صورة كاملة قابلة للنقر** أو **صورة وخلفها محتوى نصي وزر**.
 
+
+<!-- live-preview-media -->
+<!-- live-preview-videos -->
+<video controls muted loop playsinline preload="metadata" src="../videos/sections/market-specials-slider.mp4"></video>
+
+*البنرات (Market specials) - market-specials-slider*
+
+![البنرات (Market specials) - market-specials-slider-strip](./images/market-specials-slider-strip.png)
+
+*البنرات (Market specials) - market-specials-slider-strip*
+
+![البنرات (Market specials) - market-specials-slider-cards](./images/market-specials-slider-cards.png)
+
+*البنرات (Market specials) - market-specials-slider-cards*
+
+![البنرات (Market specials) - market-specials-slider-wide](./images/market-specials-slider-wide.png)
+
+*البنرات (Market specials) - market-specials-slider-wide*
+
+![البنرات (Market specials) - market-specials-slider-small](./images/market-specials-slider-small.png)
+
+*البنرات (Market specials) - market-specials-slider-small*
+
+![البنرات (Market specials) - market-specials-grid-compact](./images/market-specials-grid-compact.png)
+
+*البنرات (Market specials) - market-specials-grid-compact*
+
+![البنرات (Market specials) - market-specials-grid-large](./images/market-specials-grid-large.png)
+
+*البنرات (Market specials) - market-specials-grid-large*
+
 ---
 
 ## 1) كيفية الإضافة

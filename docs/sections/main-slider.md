@@ -27,6 +27,12 @@
 
 ![سلايدر الهيرو — شريحة صورة كاملة](./images/main-slider-hero-2.png)
 
+
+<!-- live-preview-media -->
+![سلايدر الهيرو (Hero slideshow) - main-slider-horizontal-creative](./images/main-slider-horizontal-creative.png)
+
+*سلايدر الهيرو (Hero slideshow) - main-slider-horizontal-creative*
+
 ---
 
 ## 1) كيفية الإضافة

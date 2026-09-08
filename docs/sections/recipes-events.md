@@ -17,6 +17,12 @@
 
 يعرض عنوانًا ورابط «المزيد» اختياريين، ثم بطاقات تحتوي على صورة وعنوان. يمكن إضافة أوقات التحضير والطهي والإجمالي، حتى 4 صور مكونات، حتى 4 قيم غذائية، وزر يفتح رابط البطاقة.
 
+
+<!-- live-preview-media -->
+![وصفات وفعاليات (Recipes & Events) - recipes-events-slider](./images/recipes-events-slider.png)
+
+*وصفات وفعاليات (Recipes & Events) - recipes-events-slider*
+
 ---
 
 ## 1) كيفية الإضافة
